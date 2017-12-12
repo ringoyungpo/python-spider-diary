@@ -1,0 +1,8 @@
+---
+title: "工作日记20171212"
+author: Ringo Yungpo Kao
+date: December 12, 2017
+output:
+  word_document:
+    path: /Exports/工作日记20171212.docx
+---
