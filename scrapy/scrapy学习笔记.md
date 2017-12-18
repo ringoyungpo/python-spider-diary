@@ -83,12 +83,9 @@ scrapy shell http://bj.ganji.com/fang1/chaoyang/
 ```Python
 >>> response.xpath('//div[@class="f-list-item ershoufang-list"]/dl/dd[5]/div[1]/span[1]/text()').extract()
 ['5800', '13000', '8800', '4800', '22000', '7200', '7000', '12000', '6000', '7000', '11000', '5500', '5700', '6000', '63
-00', '22000', '8500', '5300', '5500', '8500', '6000', '6500', '6090', '5300', '5000', '9200', '2900', '6800', '1000', '9
-000', '6700', '12800', '9200', '900', '5500', '4900', '5000', '5750', '6500', '4500', '7800', '8500', '8500', '8000', '5
-200', '6500', '8700', '6100', '2350', '8500', '5200', '6500', '40000', '7200', '7000', '9600', '5600', '6800', '1300', '
-5900', '3000', '6700', '5700', '6500', '4600', '5500', '11000', '5500', '8800', '3800', '4600', '5500', '1890', '2500',
-'4800', '7500', '6500', '2680', '3300', '12000', '1500', '1740', '5500', '1700', '2750', '1780', '8500', '6700', '12000'
-, '3000', '3400', '9000', '6800', '7600', '7300', '7300', '700', '7999', '3100', '9000', '4900', '2950', '1300', '2550',
+00'
+...
+', '9000', '4900', '2950', '1300', '2550',
  '1750', '2750', '2250', '3500', '900', '1900', '2300', '5500', '14000', '7500', '9000', '899', '4500', '4200', '9500',
 '2200']
 >>> len(response.xpath('//div[@class="f-list-item ershoufang-list"]/dl/dd[5]/div[1]/span[1]/text()').extract())
@@ -98,6 +95,12 @@ scrapy shell http://bj.ganji.com/fang1/chaoyang/
 在命令行捕捉到了所有的价格信息，同理也可以捕捉到所有标题信息、地址信息、详情信息等
 其中标题信息集合的xpath为
 > //div[@class="f-list-item ershoufang-list"]/dl/dd[1]/a/text()
+
+#### 命令交互模式函数介绍
+request 对网址发起请求的请求信息
+response 网址服务器响应请求,发回的相应信息
+view(response) 调用系统自带浏览器,查看response中保存着从网址中获取的网页数据
+fetch(url)在交互模式下,重新对一个url网址发送请求,自动更新到request和response中
 
 ### Scrapy爬虫数据抓取
 #### 项目初始化
@@ -110,13 +113,13 @@ Scrapy startproject zufang
 ```
 .
 +-- zufang
-|   +-- spiders
-|       +-- __init__.py
-|   +-- __init__.py
-|   +-- items.py
-|   +-- middlewares.py
-|   +-- pipelines.py
-|   +-- setting.py
+|   +-- spiders        ---在该目录下定义爬虫类并集成scrapy.Spider
+|       +-- __init__.py---只有一个
+|   +-- __init__.py    ---保持默认，不需要做任何修改
+|   +-- items.py       ---自定义项目类的地方，也就是爬虫获取到数据之后，传入管道文件（pipeline.py)的载体
+|   +-- middlewares.py ---中间配置文件
+|   +-- pipelines.py   ---项目管道文件，对传入的项目类中的数据进行一个清理和入库
+|   +-- setting.py     ---Scrapy项目的设置文件，例如下载延迟，项目管道文件中类的启用以及自定义中间件的启用和顺序
 +-- scrapy.cfg
 ```
 
@@ -139,21 +142,12 @@ class GanjiSpider(scrapy.Spider):
             print(i,":",j)
 ```
 运行
-```Terminal
+```PowerShell
 scrapy crawl zufang
+```
 
-2017-12-17 22:33:16 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: zufang)
-2017-12-17 22:33:16 [scrapy.utils.log] INFO: Overridden settings: {'SPIDER_MODULES': ['zufang.spiders'], 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'zufang', 'NEWSPIDER_MODULE': 'zufang.spiders'}
-...
-2017-12-17 22:33:17 [scrapy.core.engine] INFO: Spider opened
-2017-12-17 22:33:17 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2017-12-17 22:33:17 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6024
-2017-12-17 22:33:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://bj.ganji.com/robots.txt> (referer: None)
-2017-12-17 22:33:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://bj.ganji.com/fang1/chaoyang/> (referer: None)
-<200 http://bj.ganji.com/fang1/chaoyang/>
-安贞安华西里精装二居 和业主签合同 能长租 南北通透卧室朝南 : 6300
-地铁5.10号线，朝南一居室出租，采光好，有客厅，家电齐全 : 4500
-牡丹园 华严北里小区 精装三居室出租 寻找居家客户紧邻10号 : 7200
+可以获得多个类似以下的组合
+```PowerShell
 凯德锦绣租售中心东四环豪华社区精装两居室出租 : 11000
 为你而选 尚东阁精装开间随时看房入住集中供暖近地铁电梯房 : 3800
 双桥地铁站东北方向 朝阳路周家井公交车站下车就到 金真子后面 : 2400
@@ -161,20 +155,28 @@ scrapy crawl zufang
 ...
 月底活动周+来电立减现金+房源有限+无+我们是认真的 : 2700
 无附加费 地铁6号线青年路站 精致装修 押一付一 : 1500
-房租差个两三百+以后多付两三千+不是个例+住点好的蛋壳 : 1550
-泰福苑近地铁温馨舒适 好住不贵 比公寓更便宜 欢迎来电 : 4100
-酒仙桥卡布其诺南北通透三居室精装婚房看房方便配套齐全 : 11000
-卡夫卡精装大一居 : 5500
-温馨港湾, : 900
-2017-12-17 22:33:18 [scrapy.core.engine] INFO: Closing spider (finished)
-2017-12-17 22:33:18 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/request_bytes': 445,
- 'downloader/request_count': 2,
- 'downloader/request_method_count/GET': 2,
-...
- 'scheduler/enqueued/memory': 1,
- 'start_time': datetime.datetime(2017, 12, 17, 14, 33, 17, 115954)}
-2017-12-17 22:33:18 [scrapy.core.engine] INFO: Spider closed (finished)
-
 ```
 
+其中zip()函数以参数中最短长队数组为准。
+
+### Scrapy爬虫数据入库
+#### 初始化数据库
+通过pip安装ipython
+```Python
+pip install ipython
+```
+安装后通过ipython进入ipython的命令行模式
+```Python
+In [1]: import sqlite3
+
+In [2]: zufang = sqlite3.connect('zufang.sqlite')
+
+In [3]: create_table = 'create table zufang (tittle varchar(512), money varchar(128))'
+
+In [4]: zufang.execute(create_table)
+Out[4]: <sqlite3.Cursor at 0x1cb596af730>
+
+In [5]: exit
+```
+
+这样，数据库zufang就新建好了，并且新建了表名为zufang的表
