@@ -180,3 +180,85 @@ In [5]: exit
 ```
 
 这样，数据库zufang就新建好了，并且新建了表名为zufang的表
+#### 将爬到的数据通过pipline打印出来
+启用setting.py中的管道功能
+```Python
+ITEM_PIPELINES = {
+   'zufang.pipelines.ZufangPipeline': 300,
+}
+```
+在items.py中定义ZufangItem类
+
+```Python
+import scrapy
+
+class ZufangItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    tittle = scrapy.Field()
+    money = scrapy.Field()
+    # pass
+```
+
+在ganji.py文件中定义parse函数解析
+```Python
+import scrapy
+from ..items import ZufangItem
+
+class GanjiSpider(scrapy.Spider):
+    name = "zufang"
+    start_urls = ['http://bj.ganji.com/fang1/chaoyang/']
+
+    def parse(self, response):
+        print(response)
+        zf = ZufangItem()
+        title_list = response.xpath('//div[@class="f-list-item ershoufang-list"]/dl/dd[1]/a/text()').extract()
+        money_list = response.xpath('//div[@class="f-list-item ershoufang-list"]/dl/dd[5]/div[1]/span[1]/text()').extract()
+        for i,j in zip(title_list, money_list):
+            zf['tittle'] = i
+            zf['money'] = j
+            yield zf
+            # print(i,":",j)
+```
+在piplines.py文件中定义ZufangPipeline类以及其函数process_item
+```Python
+class ZufangPipeline(object):
+    def process_item(self, item, spider):
+        print(spider.name, 'piplines')
+        return item
+```
+得到关键结果
+```PowerShell
+zufang piplines
+2017-12-19 21:01:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://bj.ganji.com/fang1/chaoyang/>
+{'money': '2000', 'tittle': '多睡半+5min到地铁口+不选贵的+你和惬意只差一个蛋壳'}
+zufang piplines
+2017-12-19 21:01:45 [scrapy.core.scraper] DEBUG: Scraped from <200 http://bj.ganji.com/fang1/chaoyang/>
+{'money': '3600', 'tittle': '整租十里河品牌公寓不拆迁独厨独卫实墙明窗无'}
+```
+可以是看到pipline文件中的`print(spider.name, 'piplines')`语句得到。
+#### 通过pipline将爬出来的数据存入sqlite
+通过在pipline.py调用sqlite3实现数据存入数据库
+```Python
+import sqlite3
+
+class ZufangPipeline(object):
+    def open_spider(self, spider):
+        self.con = sqlite3.connect("zufang.sqlite")
+        self.cu = self.con.cursor()
+
+    def process_item(self, item, spider):
+        print(spider.name, 'piplines')
+        insert_sql = "insert into zufang(tittle, money) values('{}','{}')".format(item['tittle'], item['money'])
+        print(insert_sql)
+        self.cu.execute(insert_sql)
+        self.con.commit()
+        return item
+
+    def spider_close(self, spider):
+        self.con.close()
+```
+执行`scrapy crawl zufang`
+可以查看数据库内容
+![](picture/2017-12-19.png)
+共122条数据被抓进了数据库里面
