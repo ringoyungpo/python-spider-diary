@@ -4,7 +4,7 @@ author: Ringo Yungpo Kao
 date: January 02, 2018
 output:
   word_document:
-    path: /Exports/djnagodjango静态文件配置模板引擎.docx
+    path: /Exports/notes/djnagodjango静态文件配置模板引擎.docx
 ---
 # djnagodjango静态文件配置模板引擎
 静态文件指像css,js,images之类的文件，在Django里面静态文件的处理与一般的视图是不一样，新手往往容易犯迷糊，本文做一下总结：

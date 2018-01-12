@@ -4,7 +4,7 @@ author: Ringo Yungpo Kao
 date: January 01, 2018
 output:
   word_document:
-    path: /Exports/djnago模板引擎.docx
+    path: /Exports/notes/djnago模板引擎.docx
 ---
 # djnago模板引擎
 

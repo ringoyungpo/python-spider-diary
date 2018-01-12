@@ -4,7 +4,7 @@ author: Ringo Yungpo Kao
 date: December 29, 2017
 output:
   word_document:
-    path: /Exports/django路由系统.docx
+    path: /Exports/notes/django路由系统.docx
 ---
 # django路由系统
 

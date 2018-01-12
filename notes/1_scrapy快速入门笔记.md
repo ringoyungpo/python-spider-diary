@@ -4,7 +4,7 @@ author: Ringo Yungpo Kao
 date: December 12, 2017
 output:
   word_document:
-    path: /Exports/scapy学习笔记.docx
+    path: /Exports/notes/scapy学习笔记.docx
 ---
 
 # scrapy学习笔记

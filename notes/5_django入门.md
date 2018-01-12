@@ -4,7 +4,7 @@ author: Ringo Yungpo Kao
 date: December 26, 2017
 output:
   word_document:
-    path: /Exports/django入门.docx
+    path: /Exports/notes/django入门.docx
 ---
 # django入门
 

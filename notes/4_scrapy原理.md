@@ -4,7 +4,7 @@ author: Ringo Yungpo Kao
 date: December 24, 2017
 output:
   word_document:
-    path: /Exports/scrapy原理.docx
+    path: /Exports/notes/scrapy原理.docx
 ---
 # scrapy原理
 

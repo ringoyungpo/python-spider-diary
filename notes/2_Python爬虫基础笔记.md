@@ -4,7 +4,7 @@ author: Ringo Yungpo Kao
 date: December 19, 2017
 output:
   word_document:
-    path: /Exports/Python爬虫基础笔记.docx
+    path: /Exports/notes/Python爬虫基础笔记.docx
 ---
 # Python网络爬虫笔记
 > 这个笔记主要是阅读《Python网络爬虫从入门到实践》这本书所做的笔记，为了更好地学习这本书的内容，所以有了这个笔记。
