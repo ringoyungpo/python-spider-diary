@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>项目报告书</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\Ringo\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.2\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="file:///C:\Users\Ringo\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.2\node_modules\@shd101wyy\mume\dependencies\mermaid\mermaid.css">
+      
+      
+      
+      
+      <script type="text/javascript" src="file:///C:\Users\Ringo\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.2\node_modules\@shd101wyy\mume\dependencies\mermaid\mermaid.min.js"></script>
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="1-%E9%A1%B9%E7%9B%AE%E7%BB%BC%E8%BF%B0">1. 项目综述</h1>
+
+<h2 class="mume-header" id="11-%E9%A1%B9%E7%9B%AE%E6%9D%A5%E6%BA%90%E5%92%8C%E6%84%8F%E4%B9%89">1.1. 项目来源和意义</h2>
+
+<p>书籍是人进步的阶梯，为此我们决定对这个阶梯做一个分析，能够直观看出对人们有影响力的书籍相关信息。通过去网上爬取书籍相关信息来进行可视化分析，从而能够对书籍的有关因素做一个了解。</p>
+<h2 class="mume-header" id="12-%E9%A2%84%E6%9C%9F%E7%9B%AE%E6%A0%87">1.2. 预期目标</h2>
+
+<p>通过技术手段获取相关的图书信息，然后可视化分析，使得对人们对于书籍的偏好因素有一个了解。</p>
+<h2 class="mume-header" id="13-%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">1.3. 解决问题</h2>
+
+<ol>
+<li>图书馆热搜关键词搜索到的结果爬取。</li>
+<li>对图书馆爬取的数据进行可视化分析。</li>
+</ol>
+<h2 class="mume-header" id="14-%E9%9D%A2%E5%AF%B9%E7%9A%84%E9%97%AE%E9%A2%98">1.4. 面对的问题</h2>
+
+<p>图书馆书籍信息是静态信息，较为难以获取，需要观察特征来获取，并对信息不全的书籍进行排除。</p>
+<h1 class="mume-header" id="2-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90">2. 需求分析</h1>
+
+<h2 class="mume-header" id="21-%E7%94%A8%E6%88%B7%E9%9C%80%E6%B1%82">2.1. 用户需求</h2>
+
+<p>通过网页对于图书馆的热门书籍的特征可以直观看出相应的特点。</p>
+<h2 class="mume-header" id="22-%E6%80%BB%E4%BD%93%E6%96%B9%E6%A1%88">2.2. 总体方案</h2>
+
+<p>将信息解析，处理出有效信息，存储到数据库。其中涉及到如何爬取书籍信息，如何进行分页的爬取。</p>
+<h2 class="mume-header" id="23-%E7%88%AC%E5%8F%96%E8%BF%87%E7%A8%8B%E7%9A%84%E8%A7%A3%E6%9E%90%E6%B5%81%E7%A8%8B">2.3. 爬取过程的解析流程</h2>
+
+<div class="mermaid">graph TD
+热搜关键词页面-->|关键词1|搜索结果页面1
+热搜关键词页面-->|关键词2|搜索结果页面2
+热搜关键词页面-->|关键词n|搜索结果页面n
+搜索结果页面1-->|第1页|关键词搜索结果分页1
+搜索结果页面1-->|第2页|关键词搜索结果分页2
+搜索结果页面1-->|第n页|关键词搜索结果分页n
+关键词搜索结果分页1-->|书籍1|书籍1信息
+关键词搜索结果分页1-->|书籍2|书籍2信息
+关键词搜索结果分页1-->|书籍n|书籍n信息
+书籍1信息-->|关键信息1|解析图书信息关键信息1
+书籍1信息-->|关键信息2|解析图书信息关键信息2
+书籍1信息-->|关键信息n|解析图书信息关键信息n
+</div>
+<h1 class="mume-header" id="3-%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99">3. 代码编写</h1>
+
+<h2 class="mume-header" id="31-%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%83%AD%E8%AF%8D%E6%90%9C%E7%B4%A2%E4%BF%A1%E6%81%AF%E7%88%AC%E5%8F%96">3.1. 图书馆热词搜索信息爬取</h2>
+
+<p>本代码为图书馆热词搜索结果的信息爬取，其中涉及到了热搜关键词页面关键词所搜结果链接的爬取，关键词搜索结果分页链接爬取，书籍信息的爬取。</p>
+<h3 class="mume-header" id="311-%E7%83%AD%E6%90%9C%E5%85%B3%E9%94%AE%E8%AF%8D%E9%A1%B5%E9%9D%A2%E5%85%B3%E9%94%AE%E8%AF%8D%E6%89%80%E6%90%9C%E7%BB%93%E6%9E%9C%E9%93%BE%E6%8E%A5%E7%9A%84%E7%88%AC%E5%8F%96">3.1.1. 热搜关键词页面关键词所搜结果链接的爬取</h3>
+
+<p><img src="hot_search.png" alt="&#x56FE;3-1-1"><br>
+如图3-1-1所示，一个月以内的热门检索词的链接就是我们抓取的内容，用于访问下一级的所有结果<br>
+在Scrapy的项目目录下，建立资源爬虫类BooksSpider<br>
+并定义start_urls属性和parse函数</p>
+<pre class="language-python"><span class="token keyword">class</span> <span class="token class-name">BooksSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'books'</span>
+    allowed_domains <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'smjslib.jmu.edu.cn'</span><span class="token punctuation">]</span>
+
+    <span class="token comment" spellcheck="true">#定义要爬取的网址入口</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'http://smjslib.jmu.edu.cn/top100.aspx?sparaname=anywords'</span><span class="token punctuation">]</span>
+
+    <span class="token comment" spellcheck="true">#将这100个搜索热词的搜索结果进行爬取</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> href <span class="token keyword">in</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'td a::attr(href)'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true">#用paese_books_pages解析搜索结果的分页</span>
+            <span class="token keyword">yield</span> response<span class="token punctuation">.</span>follow<span class="token punctuation">(</span>href<span class="token punctuation">,</span> parse_books_pages<span class="token punctuation">)</span>
+</pre>
+<p>其中<br>
+<code>td a::attr(href)</code>是根据浏览器的自带工具获取的css定位，能定位到所有的热门检索关键词<br>
+·start_urls = ['<a href="http://smjslib.jmu.edu.cn/top100.aspx?sparaname=anywords">http://smjslib.jmu.edu.cn/top100.aspx?sparaname=anywords</a>']·<br>
+用于定义要爬取的网址入口<br>
+·yield response.follow(href, parse_books_pages)·<br>
+用于解析搜索结果的分页</p>
+<h3 class="mume-header" id="312-%E5%85%B3%E9%94%AE%E8%AF%8D%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E5%88%86%E9%A1%B5%E9%93%BE%E6%8E%A5%E7%88%AC%E5%8F%96">3.1.2. 关键词搜索结果分页链接爬取</h3>
+
+<p><img src="parse_pages.png" alt="&#x56FE;3-1-2"><br>
+如图3-1-2所示，我们要爬取的是总页数，需要定义一个parse_books_pages来获取每一页的链接，并进行解析内容。</p>
+<pre class="language-python"><span class="token comment" spellcheck="true">#获取该热词的搜索结果总页数，进行该热词每一页的爬取</span>
+<span class="token keyword">def</span> <span class="token function">parse_books_pages</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    pages <span class="token operator">=</span> len<span class="token punctuation">(</span>response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'#ctl00_ContentPlaceHolder1_gotoddlfl1 > option'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    anywords <span class="token operator">=</span> response<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="ctl00_ContentPlaceHolder1_conditionlbl"]/font/text()'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    body <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'anywords'</span><span class="token punctuation">:</span> anywords<span class="token punctuation">,</span>
+            <span class="token string">'dt'</span><span class="token punctuation">:</span> <span class="token string">'ALL'</span><span class="token punctuation">,</span>
+            <span class="token string">'cl'</span><span class="token punctuation">:</span> <span class="token string">'ALL'</span><span class="token punctuation">,</span>
+            <span class="token string">'dp'</span><span class="token punctuation">:</span> <span class="token string">'20'</span><span class="token punctuation">,</span>
+            <span class="token string">'sf'</span><span class="token punctuation">:</span> <span class="token string">'M_PUB_YEAR'</span><span class="token punctuation">,</span>
+            <span class="token string">'ob'</span><span class="token punctuation">:</span> <span class="token string">'DESC'</span><span class="token punctuation">,</span>
+            <span class="token string">'sm'</span><span class="token punctuation">:</span> <span class="token string">'table'</span><span class="token punctuation">,</span>
+            <span class="token string">'dept'</span><span class="token punctuation">:</span> <span class="token string">'ALL'</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> page <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> pages <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        body<span class="token punctuation">[</span><span class="token string">'page'</span><span class="token punctuation">]</span> <span class="token operator">=</span> page
+        url <span class="token operator">=</span> <span class="token string">'http://smjslib.jmu.edu.cn/searchresult.aspx?{}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>urlencode<span class="token punctuation">(</span>body<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'gb2312'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">yield</span> scrapy<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token punctuation">,</span> parse_books_url<span class="token punctuation">)</span>
+</pre>
+<p>其中，通过浏览器的内置工具，可以找到总页数的css是<code>'#ctl00_ContentPlaceHolder1_gotoddlfl1 &gt; option'</code>,这样可以得知总页数为<code>pages = len(response.css('#ctl00_ContentPlaceHolder1_gotoddlfl1 &gt; option'))</code><br>
+同理获得检索的关键词<code>anywords = response.xpath('//*[@id=&quot;ctl00_ContentPlaceHolder1_conditionlbl&quot;]/font/text()').extract()[0]</code><br>
+有了检索的关键词<code>anywords</code>和总页数<code>pages</code>就能构造出每一页的链接，并进行请求和解析，以爬取下一级内同。</p>
+<h3 class="mume-header" id="313-%E6%AF%8F%E9%A1%B5%E4%B9%A6%E7%B1%8D%E4%BF%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%81%AF%E8%8E%B7%E5%8F%96">3.1.3. 每页书籍信链接的息获取</h3>
+
+<p>通过构造每页的链接来对改链接下书籍信息的链接进行爬取，并进行解析。<br>
+需要构造一个<code>parse_books_url</code>函数来对书籍的链接进行获取。</p>
+<pre class="language-python"><span class="token comment" spellcheck="true">#将该页中的书本信息进行爬取解析</span>
+<span class="token keyword">def</span> <span class="token function">parse_books_url</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> href <span class="token keyword">in</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'td span.title a::attr(href)'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">yield</span> response<span class="token punctuation">.</span>follow<span class="token punctuation">(</span>href<span class="token punctuation">,</span> parse_books_imformation<span class="token punctuation">)</span>
+</pre>
+<p><code>'td span.title a::attr(href)'</code>是通过浏览器工具获取的css坐标下，获取的链接，通过<code>yield response.follow(href, parse_books_imformation)</code>对书籍页面进行解析。</p>
+<h3 class="mume-header" id="314-%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF%E7%9A%84%E8%8E%B7%E5%8F%96">3.1.4. 书籍信息的获取</h3>
+
+<p><img src="book_imformation.png" alt="&#x56FE;3-1-4"><br>
+如图3-1-4所示，可以看到很多书籍的关键信息，有标题信息，作者信息，出版信息等。<br>
+这样可以定义一个<code>parse_books_imformation</code>函数进行对图书信息的解析获取。</p>
+<pre class="language-python"><span class="token comment" spellcheck="true">#爬取解析每一页的关键信息</span>
+<span class="token keyword">def</span> <span class="token function">parse_books_imformation</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    book_info <span class="token operator">=</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'#ctl00_ContentPlaceHolder1_bookcardinfolbl'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'string(.)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span>
+        <span class="token string">'\u3000'</span><span class="token punctuation">)</span>
+    book_info <span class="token operator">=</span> list<span class="token punctuation">(</span>filter<span class="token punctuation">(</span><span class="token keyword">lambda</span> item<span class="token punctuation">:</span> item<span class="token punctuation">,</span> book_info<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    title_author_publishment <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'／|．—'</span><span class="token punctuation">,</span> book_info<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#标题</span>
+    title <span class="token operator">=</span> title_author_publishment<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true">#作者</span>
+    author <span class="token operator">=</span> title_author_publishment<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    publishment <span class="token operator">=</span> title_author_publishment<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'；'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true">#出版城市</span>
+    publisher_city<span class="token punctuation">,</span> publisher<span class="token punctuation">,</span> publish_year <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'：|，'</span><span class="token punctuation">,</span> publishment<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#出版年份</span>
+    publish_year <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>r<span class="token string">'\d{4}'</span><span class="token punctuation">,</span> publish_year<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    pages_length <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'；'</span><span class="token punctuation">,</span> book_info<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    pages <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'\d\d+'</span><span class="token punctuation">,</span> pages_length<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#总页数</span>
+    pages <span class="token operator">=</span> max<span class="token punctuation">(</span>pages<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#书籍长度</span>
+    length <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'\d\d+'</span><span class="token punctuation">,</span> pages_length<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    isbnandprice <span class="token operator">=</span> str<span class="token punctuation">(</span>book_info<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#isbn码</span>
+    isbn <span class="token operator">=</span> isbnandprice<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'：'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    isbn <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>r<span class="token string">'ISBN[\w|-]+'</span><span class="token punctuation">,</span> isbn<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#价格</span>
+    price <span class="token operator">=</span> isbnandprice<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'：'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    price <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>r<span class="token string">'\d+.?\d+'</span><span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#相关标题</span>
+    titles <span class="token operator">=</span> str<span class="token punctuation">(</span>book_info<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'．'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+    titles <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span>r<span class="token string">'[①-⑳]'</span><span class="token punctuation">,</span> titles<span class="token punctuation">)</span>
+    titles<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#相关作者</span>
+    authors <span class="token operator">=</span> str<span class="token punctuation">(</span>book_info<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'．'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+    authors <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span>r<span class="token string">'[①-⑳]'</span><span class="token punctuation">,</span> authors<span class="token punctuation">)</span>
+    authors <span class="token operator">=</span> list<span class="token punctuation">(</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> author<span class="token punctuation">:</span> author<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">,</span> authors<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    authors <span class="token operator">=</span> list<span class="token punctuation">(</span>filter<span class="token punctuation">(</span><span class="token keyword">lambda</span> author<span class="token punctuation">:</span> author<span class="token punctuation">,</span> authors<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#相关标签</span>
+    tags <span class="token operator">=</span> str<span class="token punctuation">(</span>book_info<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'．'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+    tags <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span>r<span class="token string">'[①-⑳]'</span><span class="token punctuation">,</span> tags<span class="token punctuation">)</span>
+    tags<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    tags <span class="token operator">=</span> list<span class="token punctuation">(</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> taglist<span class="token punctuation">:</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'  - |-'</span><span class="token punctuation">,</span> taglist<span class="token punctuation">)</span><span class="token punctuation">,</span> tags<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    tags <span class="token operator">=</span> sum<span class="token punctuation">(</span>tags<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    tags <span class="token operator">=</span> list<span class="token punctuation">(</span>set<span class="token punctuation">(</span>tags<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#索引码</span>
+    association <span class="token operator">=</span> response<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="bardiv"]/div/table/tbody/tr[1]/td[2]/text()'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    association <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>r<span class="token string">'\w+[.\w+]+[-\w+]+'</span><span class="token punctuation">,</span> association<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#馆藏量用馆藏链接数量表示</span>
+    total <span class="token operator">=</span> len<span class="token punctuation">(</span>response<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="bardiv"]/div/table/tbody/tr[*]/td[1]/a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#借出量用借出链接数量表示</span>
+    loan <span class="token operator">=</span> len<span class="token punctuation">(</span>response<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="bardiv"]/div/table/tbody/tr[*]/td[6]/a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#近一年的借出数量</span>
+    frequence <span class="token operator">=</span> response<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="ctl00_ContentPlaceHolder1_blclbl"]/text()'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    item <span class="token operator">=</span> SmjslibItem<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> isbn <span class="token operator">and</span> price <span class="token operator">and</span> association<span class="token punctuation">:</span>
+        item<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> title
+        item<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span> <span class="token operator">=</span> author
+        item<span class="token punctuation">[</span><span class="token string">'publisher_city'</span><span class="token punctuation">]</span> <span class="token operator">=</span> publisher_city
+        item<span class="token punctuation">[</span><span class="token string">'publisher'</span><span class="token punctuation">]</span> <span class="token operator">=</span> publisher
+        item<span class="token punctuation">[</span><span class="token string">'publish_year'</span><span class="token punctuation">]</span> <span class="token operator">=</span> publish_year
+        item<span class="token punctuation">[</span><span class="token string">'pages'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pages
+        item<span class="token punctuation">[</span><span class="token string">'length'</span><span class="token punctuation">]</span> <span class="token operator">=</span> length
+        item<span class="token punctuation">[</span><span class="token string">'isbn'</span><span class="token punctuation">]</span> <span class="token operator">=</span> isbn
+        item<span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span> <span class="token operator">=</span> price
+        item<span class="token punctuation">[</span><span class="token string">'titles'</span><span class="token punctuation">]</span> <span class="token operator">=</span> titles
+        item<span class="token punctuation">[</span><span class="token string">'authors'</span><span class="token punctuation">]</span> <span class="token operator">=</span> authors
+        item<span class="token punctuation">[</span><span class="token string">'tags'</span><span class="token punctuation">]</span> <span class="token operator">=</span> tags
+        item<span class="token punctuation">[</span><span class="token string">'association'</span><span class="token punctuation">]</span> <span class="token operator">=</span> association
+        item<span class="token punctuation">[</span><span class="token string">'total'</span><span class="token punctuation">]</span> <span class="token operator">=</span> total
+        item<span class="token punctuation">[</span><span class="token string">'available'</span><span class="token punctuation">]</span> <span class="token operator">=</span> total <span class="token operator">-</span> loan
+        item<span class="token punctuation">[</span><span class="token string">'loan'</span><span class="token punctuation">]</span> <span class="token operator">=</span> loan
+        item<span class="token punctuation">[</span><span class="token string">'frequence'</span><span class="token punctuation">]</span> <span class="token operator">=</span> frequence
+        <span class="token keyword">yield</span> item
+</pre>
+<p>可以通过浏览器的工具获知，在css标签<code>'#ctl00_ContentPlaceHolder1_bookcardinfolbl')</code>下有很多信息，比如标题信息，作者信息，出版信息，书籍规格等，通过<code>split</code>,<code>match</code>,<code>search</code>等正则表达式和字符串有关的数据可以解析出需要的信息。<br>
+馆藏量可以通过馆藏链接的数量获取</p>
+<pre class="language-python">    total <span class="token operator">=</span> len<span class="token punctuation">(</span>response<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="bardiv"]/div/table/tbody/tr[*]/td[1]/a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre>
+<p>借出量可以通过借出链接来获取</p>
+<pre class="language-python">loan <span class="token operator">=</span> len<span class="token punctuation">(</span>response<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="bardiv"]/div/table/tbody/tr[*]/td[6]/a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre>
+<p>通过简单运算就能计算出可借量</p>
+<pre class="language-python">item<span class="token punctuation">[</span><span class="token string">'available'</span><span class="token punctuation">]</span> <span class="token operator">=</span> total <span class="token operator">-</span> loan
+</pre>
+<h3 class="mume-header" id="315-%E7%88%AC%E5%8F%96%E7%9A%84%E4%BF%A1%E6%81%AF">3.1.5. 爬取的信息</h3>
+
+<p>以下是一条爬取信息的例子</p>
+<pre class="language-json"><span class="token punctuation">{</span> 
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"英语口语教程·1，英语初级口语＝Oral workshop:reproduction"</span><span class="token punctuation">,</span> 
+    <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"吴祯福主编；李又文等编写"</span><span class="token punctuation">,</span> 
+    <span class="token property">"publisher_city"</span><span class="token operator">:</span> <span class="token string">"北京"</span><span class="token punctuation">,</span> 
+    <span class="token property">"publisher"</span><span class="token operator">:</span> <span class="token string">"外语教学与研究出版社"</span><span class="token punctuation">,</span> 
+    <span class="token property">"publish_year"</span><span class="token operator">:</span> <span class="token string">"1993"</span><span class="token punctuation">,</span> 
+    <span class="token property">"pages"</span><span class="token operator">:</span> <span class="token string">"310"</span><span class="token punctuation">,</span> 
+    <span class="token property">"length"</span><span class="token operator">:</span> <span class="token string">"20"</span><span class="token punctuation">,</span> 
+    <span class="token property">"isbn"</span><span class="token operator">:</span> <span class="token string">"ISBN7-5600-0818-6"</span><span class="token punctuation">,</span> 
+    <span class="token property">"price"</span><span class="token operator">:</span> <span class="token string">"13.80"</span><span class="token punctuation">,</span> 
+    <span class="token property">"titles"</span><span class="token operator">:</span> <span class="token punctuation">[</span> 
+        <span class="token string">"英语口语教程"</span><span class="token punctuation">,</span> 
+        <span class="token string">"Oral workshop:reproduction"</span><span class="token punctuation">,</span> 
+        <span class="token string">"英语初级口语"</span><span class="token punctuation">,</span> 
+        <span class="token string">"英语 口语"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token property">"authors"</span><span class="token operator">:</span> <span class="token punctuation">[</span> 
+        <span class="token string">"吴祯福"</span><span class="token punctuation">,</span> 
+        <span class="token string">"李又文"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token property">"tags"</span><span class="token operator">:</span> <span class="token punctuation">[</span> 
+        <span class="token string">"教材"</span><span class="token punctuation">,</span> 
+        <span class="token string">"英语"</span><span class="token punctuation">,</span> 
+        <span class="token string">"口语"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token property">"association"</span><span class="token operator">:</span> <span class="token string">"H319.9"</span><span class="token punctuation">,</span> 
+    <span class="token property">"total"</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span> 
+    <span class="token property">"available"</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span> 
+    <span class="token property">"loan"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 
+    <span class="token property">"frequence"</span><span class="token operator">:</span> <span class="token string">"0"</span>
+<span class="token punctuation">}</span>
+</pre>
+<h1 class="mume-header" id="4-%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95">4. 程序调试</h1>
+
+<p>通过爬取地数据获得近一年来被借阅次数超过500次地所属出版社及其所在地<br>
+<img src="result.png" alt="&#x56FE;4"><br>
+通过图4可以很直观地热门借阅的书籍所属的城市主要来源于北京、上海、南京，如果说书籍是人类进步的阶梯，那么北京、上海、南京可以说是推进人类进步的文化要地。</p>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#1-%E9%A1%B9%E7%9B%AE%E7%BB%BC%E8%BF%B0">1. 项目综述</a>
+<ul>
+<li><a href="#11-%E9%A1%B9%E7%9B%AE%E6%9D%A5%E6%BA%90%E5%92%8C%E6%84%8F%E4%B9%89">1.1. 项目来源和意义</a></li>
+<li><a href="#12-%E9%A2%84%E6%9C%9F%E7%9B%AE%E6%A0%87">1.2. 预期目标</a></li>
+<li><a href="#13-%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">1.3. 解决问题</a></li>
+<li><a href="#14-%E9%9D%A2%E5%AF%B9%E7%9A%84%E9%97%AE%E9%A2%98">1.4. 面对的问题</a></li>
+</ul>
+</li>
+<li><a href="#2-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90">2. 需求分析</a>
+<ul>
+<li><a href="#21-%E7%94%A8%E6%88%B7%E9%9C%80%E6%B1%82">2.1. 用户需求</a></li>
+<li><a href="#22-%E6%80%BB%E4%BD%93%E6%96%B9%E6%A1%88">2.2. 总体方案</a></li>
+<li><a href="#23-%E7%88%AC%E5%8F%96%E8%BF%87%E7%A8%8B%E7%9A%84%E8%A7%A3%E6%9E%90%E6%B5%81%E7%A8%8B">2.3. 爬取过程的解析流程</a></li>
+</ul>
+</li>
+<li><a href="#3-%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99">3. 代码编写</a>
+<ul>
+<li><a href="#31-%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%83%AD%E8%AF%8D%E6%90%9C%E7%B4%A2%E4%BF%A1%E6%81%AF%E7%88%AC%E5%8F%96">3.1. 图书馆热词搜索信息爬取</a>
+<ul>
+<li><a href="#311-%E7%83%AD%E6%90%9C%E5%85%B3%E9%94%AE%E8%AF%8D%E9%A1%B5%E9%9D%A2%E5%85%B3%E9%94%AE%E8%AF%8D%E6%89%80%E6%90%9C%E7%BB%93%E6%9E%9C%E9%93%BE%E6%8E%A5%E7%9A%84%E7%88%AC%E5%8F%96">3.1.1. 热搜关键词页面关键词所搜结果链接的爬取</a></li>
+<li><a href="#312-%E5%85%B3%E9%94%AE%E8%AF%8D%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E5%88%86%E9%A1%B5%E9%93%BE%E6%8E%A5%E7%88%AC%E5%8F%96">3.1.2. 关键词搜索结果分页链接爬取</a></li>
+<li><a href="#313-%E6%AF%8F%E9%A1%B5%E4%B9%A6%E7%B1%8D%E4%BF%A1%E9%93%BE%E6%8E%A5%E7%9A%84%E6%81%AF%E8%8E%B7%E5%8F%96">3.1.3. 每页书籍信链接的息获取</a></li>
+<li><a href="#314-%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF%E7%9A%84%E8%8E%B7%E5%8F%96">3.1.4. 书籍信息的获取</a></li>
+<li><a href="#315-%E7%88%AC%E5%8F%96%E7%9A%84%E4%BF%A1%E6%81%AF">3.1.5. 爬取的信息</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#4-%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95">4. 程序调试</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: false
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false 
+}
+mermaidAPI.initialize(window['MERMAID_CONFIG'] || {})
+
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
+    
+    
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>
